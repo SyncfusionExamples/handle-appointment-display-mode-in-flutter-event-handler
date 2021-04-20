@@ -16,13 +16,9 @@ List<String> _appointmentDisplayModes = <String>[
 ];
 
 class ScheduleExample extends State<AppointmentDisplayMode> {
-  MonthAppointmentDisplayMode _displayMode;
+  MonthAppointmentDisplayMode? _displayMode =
+      MonthAppointmentDisplayMode.appointment;
 
-  @override
-  void initState() {
-    _displayMode = MonthAppointmentDisplayMode.appointment;
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +28,7 @@ class ScheduleExample extends State<AppointmentDisplayMode> {
         appBar: AppBar(
           title: Text("Select display mode"),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.arrow_forward), onPressed: (){}),
+            IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {}),
             PopupMenuButton<String>(
               icon: Icon(Icons.party_mode),
               itemBuilder: (BuildContext context) {
@@ -63,8 +59,8 @@ class ScheduleExample extends State<AppointmentDisplayMode> {
               child: SfCalendar(
                 view: CalendarView.month,
                 dataSource: getCalendarDataSource(),
-                monthViewSettings:
-                    MonthViewSettings(appointmentDisplayMode: _displayMode,showAgenda: true),
+                monthViewSettings: MonthViewSettings(
+                    appointmentDisplayMode: _displayMode!, showAgenda: true),
               ),
             ),
           ],
@@ -97,6 +93,7 @@ class ScheduleExample extends State<AppointmentDisplayMode> {
     return _DataSource(appointments);
   }
 }
+
 class _DataSource extends CalendarDataSource {
   _DataSource(List<Appointment> source) {
     appointments = source;
