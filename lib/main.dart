@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-void main() => runApp(AppointmentDisplayMode());
+void main() => runApp(const AppointmentDisplayMode());
 
 class AppointmentDisplayMode extends StatefulWidget {
+  const AppointmentDisplayMode({super.key});
+
   @override
   State<StatefulWidget> createState() => ScheduleExample();
 }
@@ -26,11 +27,11 @@ class ScheduleExample extends State<AppointmentDisplayMode> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Select display mode"),
+          title: const Text("Select display mode"),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.arrow_forward), onPressed: () {}),
             PopupMenuButton<String>(
-              icon: Icon(Icons.party_mode),
+              icon: const Icon(Icons.party_mode),
               itemBuilder: (BuildContext context) {
                 return _appointmentDisplayModes.map((String choice) {
                   return PopupMenuItem<String>(
