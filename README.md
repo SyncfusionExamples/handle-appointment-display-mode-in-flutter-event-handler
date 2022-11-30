@@ -8,6 +8,8 @@ You can handle the calendar month view appointment display by using the [appoint
 * appointment - appointment subject will be displayed in month cell.
 * none - appointment will not be displayed.
 
+![appointments_displaymode](https://user-images.githubusercontent.com/46158936/204806030-eb12755b-c447-4481-9ef7-9111b5baacde.png)
+
 ## Requirements to run the demo
 * [VS Code](https://code.visualstudio.com/download)
 * [Flutter SDK v1.22+](https://flutter.dev/docs/development/tools/sdk/overview)
